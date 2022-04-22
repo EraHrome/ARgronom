@@ -1,6 +1,7 @@
 using ARgronom.Contexts;
 using ARgronom.Data;
 using ARgronom.Mappings;
+using ARgronom.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -48,8 +49,12 @@ namespace ARgronom
                 mc.AddProfile(new MappingProfile());
             });
 
-            IMapper mapper = mapperConfig.CreateMapper();
+            var mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
+
+            services.AddScoped<StatisticService>();
+            services.AddScoped<SearchService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

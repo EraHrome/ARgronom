@@ -1,37 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ARgronom.Models
+﻿namespace ARgronom.Models
 {
-    public class Plants
+    public class SearchPlantsModel
     {
-        [Key]
-        public int Id { get; set; }
 
         /// <summary>
-        /// Тип растения.
+        /// Поисковый запрос
         /// </summary>
-        public string Category { get; set; }
-
-        public string Title { get; set; }
-
-        public string ImageName { get; set; }
-
-        public string Description { get; set; }
+        public string Query { get; set; }
 
         /// <summary>
-        /// Где растет (локация).
+        /// Id пользователя
         /// </summary>
-        public string PlaceName { get; set; }
-
-        /// <summary>
-        /// Тип почвы.
-        /// </summary>
-        public string SoilType { get; set; }
-
-        /// <summary>
-        /// Удобрение.
-        /// </summary>
-        public string Fertilizer { get; set; }
+        public string UserId { get; set; }
 
         /// <summary>
         /// Как часто удобрять.
