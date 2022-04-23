@@ -16,7 +16,7 @@ namespace ARgronom.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string category)
         {
             var plants = _context.Plants.AsEnumerable();
             return View(plants);

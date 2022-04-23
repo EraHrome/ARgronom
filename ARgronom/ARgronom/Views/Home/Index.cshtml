@@ -1,12 +1,15 @@
-﻿@using System.Security.Claims;
-@using System.Linq;
+﻿@using ARgronom.Models.ViewModels;
+@using System.Security.Claims;
 @using ARgronom.Contexts;
 @using ARgronom.Models;
+@using System.Linq;
 
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 @inject Context context
+
+@model HomeIndexViewModel
 
 @{
     var usersCount = context.Roles.Count();
@@ -194,161 +197,34 @@
                     <li>
                         <a href="#" class="btn btn-default btn-outline btn-round active" data-filter="*">Все категории</a>
                     </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-outline btn-round"
-                           data-filter=".maintenance">Уход за огородом</a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-outline btn-round"
-                           data-filter=".decoration">Декорация</a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-outline btn-round"
-                           data-filter=".protection">Защита от вредителей</a>
-                    </li>
+                    @foreach(var item in Model.AllCategoriesAndImages)
+                    {
+                      <li>
+                          <a href="/Plants/Index?category=@item.Key" class="btn btn-default btn-outline btn-round"data-filter=".maintenance">
+                              @item.Key
+                          </a>
+                      </li>
+                    }
                 </ul>
 
                 <ul class="gallery-container grid-md-5 grid-sm-2 grid-xs-2 no-wrap no-gutter">
-                    <li class="decoration protection">
+                    @foreach(var item in Model.AllCategoriesAndImages)
+                    {
+                      <li class="decoration protection">
                         <figure class="img-gallery">
                             <div class="img-content">
-                                <img src="~/img/portfolio/p1.jpg" alt="Portfolio Image">
+                                <img src="~/products/@item.Value" alt="@item.Value">
                                 <div class="img-overlay"></div>
 
-                                <a href="img/portfolio/p1-thumb.jpg" class="venobox preview" data-gall="myGallery"
+                                <a href="/Plants/Index?category=@item.Key" class="venobox preview" data-gall="myGallery"
                                    title="Example of description caption">
                                     <i class="fa fa-search"></i>
                                 </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
+                                <a href="/Plants/Index?category=@item.Key" class="permalink"><i class="fa fa-link"></i></a>
                             </div>
                         </figure>
                     </li>
-                    <li class="protection">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p2.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="img/portfolio/p2-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="decoration maintenance">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p3.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="img/portfolio/p3-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="decoration">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p4.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="img/portfolio/p4-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="maintenance">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p5.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="~/img/portfolio/p5-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="protection">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p6.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="~/img/portfolio/p6-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="maintenance">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p7.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="~/img/portfolio/p7-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption 7">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="protection">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p8.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="img/portfolio/p8-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="protection">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p9.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="~/img/portfolio/p9-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="~/gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
-                    <li class="protection">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/img/portfolio/p10.jpg" alt="Portfolio Image">
-                                <div class="img-overlay"></div>
-
-                                <a href="~/img/portfolio/p10-thumb.jpg" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="gallery-single.html" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
-                    </li>
+                    }
                 </ul>
             </div>
         </div>

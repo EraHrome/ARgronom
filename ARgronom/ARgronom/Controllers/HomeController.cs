@@ -1,5 +1,6 @@
 ﻿using ARgronom.Contexts;
 using ARgronom.Models;
+using ARgronom.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,7 +24,19 @@ namespace ARgronom.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var allCategoriesAndImages = new Dictionary<string, string>();
+            foreach (var item in _context.Plants)
+            {
+                if (!allCategoriesAndImages.ContainsKey(item.Category))
+                {
+                    allCategoriesAndImages.Add(item.Category, item.ImageName);
+                }
+            }
+            var model = new HomeIndexViewModel()
+            {
+                AllCategoriesAndImages = allCategoriesAndImages
+            };
+            return View(model);
         }
 
         public IActionResult Privacy()
