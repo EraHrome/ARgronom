@@ -2,53 +2,80 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Вход";
 }
 
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+<div id="page-header" class="content-contrast">
+        <div class="page-title-container">
+            <div class="background-overlay"></div>
+            <div class="container centered-container">
+                <div class="centered-inner-container">
+                    <h1 class="page-title">Войти</h1>
+                    <hr class="separator small-separator">
+                    <div class="heading-caption">Let's Talk Business, Get in Touch!</div>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe">
-                            <input asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
+            </div>
+        </div>
+        <div class="breadcrumb-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="breadcrumb">
+                            <a class="breadcrumb-item" href="/Home/Index">Главная</a>
+                            <span class="breadcrumb-item active">Войти</span>
+                        </nav>
                     </div>
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Log in</button>
-                </div>
-                <div class="form-group">
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </form>
-        </section>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="heading-title">
+                        <h3>Get in touch <strong class="text-color">With us</strong></h3>
+                    </div>
+                    <p>
+                        If you have any question about ARgronom or how we can help to maintenance your garden, please
+                        contact us directly by selecting from one of the below categories that is the most relevant to
+                        your inquiry and fill our short feedback form.
+                    </p>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <form id="account" class="contact-form" method="post">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Email"></label>
+                                    <input asp-for="Input.Email" class="form-control" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group no-margin-lg">
+                                    <label asp-for="Input.Password"></label>
+                                    <input asp-for="Input.Password" class="form-control" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                <div class="checkbox">
+                                    <label asp-for="Input.RememberMe">
+                                        <input asp-for="Input.RememberMe" />
+                                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                    </label>
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                        <span class="loading"></span>
+                        <div class="success-contact">
+                            <div class="alert alert-success">
+                                <i class="fa fa-check-circle"></i> Your <strong>Email Send</strong> Thank you.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 col-md-offset-2">
         <section>
             <h4>Use another service to log in.</h4>
             <hr />
@@ -78,7 +105,61 @@
             }
         </section>
     </div>
-</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="separator">
+                </div>
+                <div class="col-md-4">
+                    <div class="content-box small left no-margin-lg">
+                        <div class="icon-shape-disable">
+                            <i class="fa fa-building-o" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="text-color">Адрес офиса</h5>
+                        <p>
+                            Российская конфедерация <br>
+                            Тульская губерния, Тула 69696
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-box small left no-margin-lg">
+                        <div class="icon-shape-disable">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="text-color">Office Hours</h5>
+                        <p>
+                            С понедельника по Пятницу : 7:00 - 18:00 <br>
+                            Суббота : 9:00 - 15:00
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-box small left no-margin-lg">
+                        <div class="icon-shape-disable">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="text-color">Телефон и факс</h5>
+                        <p>
+                            Phone : (111) 111 1111 <br>
+                            Fax : (111) 111 1111
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section no-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="map" class="contact-map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
