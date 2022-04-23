@@ -3562,3 +3562,9 @@ ul.owl-carousel {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
+
+.crop {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 87px;
+}
