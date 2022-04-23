@@ -157,6 +157,7 @@
                                 @if (roleType != Role.None)
                                 {
                                     <li><a href="/PersonalArea/Index">Личный кабинет</a></li>
+                                    <li><a asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" >Выйти</a></li>
                                 }
                                 else
                                 {
