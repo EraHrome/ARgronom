@@ -1,5 +1,4 @@
-﻿
-@model ARgronom.Models.Plants
+﻿@model ARgronom.Models.Plants
 
 @{
     ViewData["Title"] = Model.Title;
@@ -34,100 +33,97 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-lg-9">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>@Model.Title</h3>
-                        <p>@Model.Description</p>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-agriculture"></i>
-                            </div>
-                            <h5>Где растет</h5>
-                            <p>@Model.PlaceName</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>@Model.Title</h3>
+                    <img class="img-radius img-shadow" src="~/products/@(Model.ImageName)"
+                         alt="@Model.Title">
+                </div>
+                <div class="col-md-4">
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-agriculture"></i>
                         </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-natural-resources"></i>
-                            </div>
-                            <h5>Тип почвы</h5>
-                            <p>@Model.SoilType</p>
-                        </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-planting"></i>
-                            </div>
-                            <h5>Удобрение</h5>
-                            <p>@Model.Fertilizer</p>
-                        </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-spring-day"></i>
-                            </div>
-                            <h5>Как часто удобрять</h5>
-                            <p>@Model.FertilizerFrequency</p>
-                        </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-research_01"></i>
-                            </div>
-                            <h5>Минимальное расстояние до следующего саженца</h5>
-                            <p>@Model.MinToNextPlant</p>
-                        </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-growing-plant"></i>
-                            </div>
-                            <h5>Минимальное расстояние до следующей грядки</h5>
-                            <p>@Model.MinToNextGardenBed</p>
-                        </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-autumn-tree"></i>
-                            </div>
-                            <h5>Нужно ли подвязывать</h5>
-                            <p>@Model.NeedToTie</p>
-                        </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-watering-can"></i>
-                            </div>
-                            <h5>Частота полива в днях</h5>
-                            <p>@Model.WateringFrequency</p>
-                        </div>
-
-                        <div class="content-box left small">
-                            <div class="icon-shape-disable">
-                                <i class="craftico-spring-day_01"></i>
-                            </div>
-                            <h5>За сколько дней в среднем вырастает</h5>
-                            <p>@Model.StandardGrowthTime</p>
-                        </div>
+                        <h5>Где растет</h5>
+                        <p>@Model.PlaceName</p>
                     </div>
-                    <div class="col-md-6">
-                        <img class="img-radius img-shadow" src="~/products/@(Model.ImageName)"
-                             alt="@Model.Title">
+
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-natural-resources"></i>
+                        </div>
+                        <h5>Тип почвы</h5>
+                        <p>@Model.SoilType</p>
+                    </div>
+
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-planting"></i>
+                        </div>
+                        <h5>Удобрение</h5>
+                        <p>@Model.Fertilizer</p>
+                    </div>
+
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-spring-day"></i>
+                        </div>
+                        <h5>Как часто удобрять</h5>
+                        <p>@Model.FertilizerFrequency</p>
+                    </div>
+
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-research_01"></i>
+                        </div>
+                        <h5>Минимальное расстояние до следующего саженца</h5>
+                        <p>@Model.MinToNextPlant</p>
                     </div>
                 </div>
-
-                <hr class="separator">
-
-                <div class="promo-box green full-width content-contrast no-margin-bottom">
-                    <div class="promo-content">
-                        <h4>Добавьте это растение к себе в личный кабинет, чтобы следить за прогрессом.</h4>
-                        <p>Также вы можете заказать у нас все необходимое для ухода за растениями</p>
+                <div class="col-md-4">
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-growing-plant"></i>
+                        </div>
+                        <h5>Минимальное расстояние до следующей грядки</h5>
+                        <p>@Model.MinToNextGardenBed</p>
                     </div>
-                    <div class="promo-action">
-                        <a href="#" class="btn btn-outline white btn-radius">Посадить у себя</a>
+
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-autumn-tree"></i>
+                        </div>
+                        <h5>Нужно ли подвязывать</h5>
+                        <p>@Model.NeedToTie</p>
                     </div>
+
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-watering-can"></i>
+                        </div>
+                        <h5>Частота полива в днях</h5>
+                        <p>@Model.WateringFrequency</p>
+                    </div>
+
+                    <div class="content-box left small">
+                        <div class="icon-shape-disable">
+                            <i class="craftico-spring-day_01"></i>
+                        </div>
+                        <h5>За сколько дней в среднем вырастает</h5>
+                        <p>@Model.StandardGrowthTime</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <div class="promo-box green full-width content-contrast no-margin-bottom">
+                <div class="promo-content">
+                    <h4>Добавьте это растение к себе в личный кабинет, чтобы следить за прогрессом.</h4>
+                    <p>Также вы можете заказать у нас все необходимое для ухода за растениями</p>
+                </div>
+                <div class="promo-action">
+                    <a href="#" class="btn btn-outline white btn-radius">Посадить у себя</a>
                 </div>
             </div>
         </div>
