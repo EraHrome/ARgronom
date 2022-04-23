@@ -31,7 +31,7 @@ namespace ARgronom.Controllers
             return View(model);
         }
 
-        public IActionResult AddCoord(string latit, string longit, string plantId)
+        public IActionResult AddCoord(decimal latit, decimal longit, string plantId)
         {
             var plant = _context.UserPlants.First(x => x.PlantId == plantId);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

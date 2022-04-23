@@ -4,15 +4,21 @@ using System.Security.Claims;
 using System.Linq;
 using ARgronom.Models.ViewModels;
 using System;
+using ARgronom.Services;
+using ARgronom.Models.Weather;
+using System.Threading.Tasks;
 
 namespace ARgronom.Controllers
 {
     public class PersonalAreaController : Controller
     {
         private readonly Context _context;
-        public PersonalAreaController(Context context)
+        private readonly WeatherService _weatherService;
+
+        public PersonalAreaController(Context context, WeatherService weatherService)
         {
             _context = context;
+            _weatherService = weatherService;
         }
 
         public IActionResult Index()
@@ -38,15 +44,24 @@ namespace ARgronom.Controllers
             return RedirectToAction("Index", "PersonalArea");
         }
 
-        public IActionResult MyDetail(string plantId)
+        public async Task<IActionResult> MyDetail(string plantId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userPlant = _context.UserPlants.FirstOrDefault(x => x.PlantId == plantId && x.UserId == userId);
             var plant = _context.Plants.FirstOrDefault(x => x.Id.ToString() == userPlant.PlantId);
+
+            var marker = _context.Markers.FirstOrDefault(x => x.PlantId == plantId && x.UserId == userId);
+            WeatherApiResponse weather = null;
+            if(marker != null)
+            {
+                weather = await _weatherService.GetWeather(marker.Latitude, marker.Longitude);
+            }
+
             var model = new MyDetailViewModel()
             {
                 UserPlant = userPlant,
-                Plant = plant
+                Plant = plant, 
+                Weather = weather
             };
             return View(model);
         }

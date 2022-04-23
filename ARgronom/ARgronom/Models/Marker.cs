@@ -6,8 +6,8 @@ namespace ARgronom.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
         public string PlantId { get; set; }
         public string UserId { get; set; }
 
