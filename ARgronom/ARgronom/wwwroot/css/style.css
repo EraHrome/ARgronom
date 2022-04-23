@@ -103,7 +103,7 @@ a:hover {
 }
 
 .colored-bg {
-  background-color: #87ba45 !important;
+  background-color: #235434 !important;
 }
 
 .white-bg {
@@ -111,7 +111,7 @@ a:hover {
 }
 
 .text-color {
-  color: #87ba45;
+  color: #235434;
 }
 
 .text-white {
@@ -184,7 +184,7 @@ a:hover {
 }
 
 .form-control:focus {
-  border-color: #87ba45;
+  border-color: #235434;
   -moz-box-shadow: inset 0 1px 1px rgba(135, 186, 69, 0.075), 0 0 8px rgba(135, 186, 69, 0.6);
   -webkit-box-shadow: inset 0 1px 1px rgba(135, 186, 69, 0.075), 0 0 8px rgba(135, 186, 69, 0.6);
   box-shadow: inset 0 1px 1px rgba(135, 186, 69, 0.075), 0 0 8px rgba(135, 186, 69, 0.6);
@@ -221,7 +221,7 @@ select.form-control:focus {
 }
 
 .tag-default {
-  background: #87ba45;
+  background: #235434;
   color: #fff;
 }
 
@@ -246,7 +246,7 @@ h6 {
 }
 
 .highlight {
-  background: #87ba45;
+  background: #235434;
   color: #fff;
   padding: 2px 5px 3px 5px;
   vertical-align: baseline;
@@ -265,7 +265,7 @@ h6 {
   font-family: Georgia;
 }
 .dropcap.square, .dropcap.circle {
-  background: #87ba45;
+  background: #235434;
   text-align: center;
   color: #fff;
   font-size: 44px;
@@ -309,7 +309,7 @@ h6 {
   position: absolute;
   display: inline-block;
   bottom: 0;
-  background: #87ba45;
+  background: #235434;
 }
 .heading-title.text-center:after {
   margin-left: -40px;
@@ -342,7 +342,7 @@ h6 {
   color: #7b8b8e;
 }
 .me-list a:hover {
-  color: #87ba45;
+  color: #235434;
 }
 .me-list li ul {
   margin-left: 25px;
@@ -356,7 +356,7 @@ h6 {
 }
 .me-list li:before {
   margin-right: 10px;
-  color: #87ba45;
+  color: #235434;
 }
 
 .square-list,
@@ -455,7 +455,7 @@ h6 {
   margin-left: 0;
 }
 .btn.btn-link {
-  color: #87ba45;
+  color: #235434;
   padding-left: 0;
   padding-right: 0;
 }
@@ -467,11 +467,11 @@ h6 {
 .btn.btn-outline {
   padding: 13px 30px;
   background-color: transparent;
-  border: 2px solid #87ba45;
-  color: #87ba45;
+  border: 2px solid #235434;
+  color: #235434;
 }
 .btn.btn-outline:hover {
-  background: #87ba45;
+  background: #235434;
   color: #fff;
 }
 
@@ -502,7 +502,7 @@ h6 {
 }
 
 .btn-default {
-  background: #87ba45;
+  background: #235434;
   color: #fff;
 }
 
@@ -512,13 +512,13 @@ h6 {
 .btn-default:active:focus,
 .btn-default.active:focus,
 .open > .dropdown-toggle.btn-default {
-  background: #90C64A;
+  background: #13361F;
   color: #fff;
 }
 
 .btn-default:active,
 .btn-default.active {
-  background: #90C64A;
+  background: #235434;
   box-shadow: none;
   color: #fff;
 }
@@ -531,7 +531,7 @@ h6 {
 }
 .btn-border:hover {
   background: #fff;
-  color: #87ba45;
+  color: #235434;
 }
 
 .btn.black {
@@ -639,7 +639,7 @@ h6 {
   background: transparent;
 }
 .btn.white i {
-  color: #87ba45;
+  color: #235434;
 }
 
 .btn-primary.btn-outline {
@@ -778,13 +778,13 @@ ul.owl-carousel {
   border-radius: .25rem .25rem 0 0;
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-link.active:focus {
-  background-color: #87ba45;
-  border-color: #87ba45;
+  background-color: #235434;
+  border-color: #235434;
   color: #fff;
 }
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   background-color: #e6e6e6;
-  color: #87ba45;
+  color: #235434;
 }
 .nav-tabs i {
   margin-right: 5px;
@@ -887,12 +887,12 @@ ul.owl-carousel {
 }
 .accordion > .card .btn.collapsed:hover {
   background-color: #e6e6e6;
-  color: #87ba45;
+  color: #235434;
 }
 .accordion > .card .btn:not(.collapsed) {
-  background: #87ba45;
+  background: #235434;
   color: #fff;
-  border: 1px solid #87ba45;
+  border: 1px solid #235434;
 }
 .accordion > .card .btn:not(.collapsed):after {
   font-family: "FontAwesome";
@@ -1040,7 +1040,7 @@ ul.owl-carousel {
 }
 .header-info a:hover,
 .header-info i {
-  color: #87ba45;
+  color: #235434;
 }
 .header-info i {
   margin-right: 5px;
@@ -1081,7 +1081,7 @@ ul.owl-carousel {
   background: #fff;
 }
 #header.header-version2 .header-top {
-  background: #87ba45;
+  background: #235434;
 }
 #header.header-version2 .header-info a:hover,
 #header.header-version2 .header-info i {
@@ -1181,7 +1181,7 @@ ul.owl-carousel {
 .me-menu > li > a {
   color: #ffffff;
   padding: 39px 14px 39px;
-  border-bottom: 0 solid #87ba45;
+  border-bottom: 0 solid #235434;
   transition: all 0.15s ease-in-out;
   -moz-transition: all 0.15s ease-in-out;
   -webkit-transition: all 0.15s ease-in-out;
@@ -1193,23 +1193,23 @@ ul.owl-carousel {
 }
 .me-menu span.scroll-up:hover,
 .me-menu span.scroll-down:hover {
-  color: #87ba45;
+  color: #235434;
 }
 .me-menu ul > li > a:hover, .me-menu ul > li > a:focus, .me-menu ul > li > a:active, .me-menu ul > li > a.current, .me-menu ul > li > a.highlighted {
   padding: 10px 20px;
-  color: #87ba45;
+  color: #235434;
 }
 .me-menu a.active,
 .me-menu a.highlighted,
 .me-menu a.current {
-  color: #87ba45;
+  color: #235434;
 }
 .me-menu ul > li > a,
 .me-menu .mega-menu-container {
   color: #637173;
 }
 .me-menu .mega-menu-list .active a {
-  color: #87ba45;
+  color: #235434;
 }
 .me-menu .mega-menu-title {
   margin-bottom: 15px;
@@ -1265,7 +1265,7 @@ ul.owl-carousel {
   color: #90C64A;
 }
 .additional-menu > a.active {
-  background-color: #87ba45;
+  background-color: #235434;
 }
 .additional-menu > a.active:hover {
   background-color: #90C64A;
@@ -1739,7 +1739,7 @@ ul.owl-carousel {
 .feature:hover h4,
 .feature:hover h5,
 .feature:hover h6 {
-  color: #87ba45;
+  color: #235434;
 }
 .feature.icon-left i {
   float: left;
@@ -1798,7 +1798,7 @@ ul.owl-carousel {
 .testimonial-carousel .owl-dots .owl-dot:hover span {
   width: 10px;
   height: 10px;
-  background: #87ba45;
+  background: #235434;
   opacity: 1;
 }
 .testimonial-carousel .content-contrast {
@@ -1847,7 +1847,7 @@ ul.owl-carousel {
 .testimonial span {
   font-weight: normal;
   display: inline-block;
-  background: #87ba45;
+  background: #235434;
   color: #fff;
   font-size: 12px;
   line-height: 24px;
@@ -1897,7 +1897,7 @@ ul.owl-carousel {
   font-size: 68px;
   margin-right: 20px;
   float: left;
-  color: #87ba45;
+  color: #235434;
 }
 .counter-box .counter-content {
   overflow: hidden;
@@ -1939,7 +1939,7 @@ ul.owl-carousel {
   -webkit-transition: all 0.35s ease-in-out;
 }
 .client-carousel li:hover img {
-  border-color: #87ba45;
+  border-color: #235434;
   -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.125);
   box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.125);
@@ -2001,7 +2001,7 @@ ul.owl-carousel {
   color: inherit;
 }
 .process-box .title a:hover {
-  color: #87ba45;
+  color: #235434;
 }
 
 /* ==========================================================================
@@ -2030,7 +2030,7 @@ ul.owl-carousel {
   position: relative;
   color: #fff;
   margin: 0 auto 25px;
-  background-color: #87ba45;
+  background-color: #235434;
   width: 90px;
   height: 90px;
   line-height: 110px;
@@ -2154,7 +2154,7 @@ ul.owl-carousel {
   background-color: #3498db;
 }
 .me-table.green thead {
-  background-color: #87ba45;
+  background-color: #235434;
 }
 .me-table.yellow thead {
   background-color: #f3cc31;
@@ -2189,7 +2189,7 @@ ul.owl-carousel {
 }
 
 .pricing-header {
-  background-color: #87ba45;
+  background-color: #235434;
   color: #fff;
   position: relative;
   *zoom: 1;
@@ -2205,7 +2205,7 @@ ul.owl-carousel {
   content: "";
   width: 30px;
   height: 30px;
-  background: #87ba45;
+  background: #235434;
   position: absolute;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -2276,7 +2276,7 @@ ul.owl-carousel {
 .pricing-content.pricing-icon i {
   font-size: 46px;
   margin-bottom: 20px;
-  color: #87ba45;
+  color: #235434;
 }
 .pricing-content.pricing-icon strong {
   line-height: 1;
@@ -2414,7 +2414,7 @@ ul.owl-carousel {
 }
 .img-gallery:hover .preview:hover,
 .img-gallery:hover .permalink:hover {
-  background-color: #87ba45;
+  background-color: #235434;
   border-color: transparent;
 }
 
@@ -2544,7 +2544,7 @@ ul.owl-carousel {
 }
 .date-meta span {
   display: block;
-  background: #87ba45;
+  background: #235434;
   color: #fff;
   font-size: 13px;
   line-height: 23px;
@@ -2598,7 +2598,7 @@ ul.owl-carousel {
   color: #525252;
 }
 .post-title:hover a {
-  color: #87ba45;
+  color: #235434;
 }
 
 .post-meta {
@@ -2621,7 +2621,7 @@ ul.owl-carousel {
   color: #adadad;
 }
 .post-meta a:hover {
-  color: #87ba45;
+  color: #235434;
 }
 
 .post-type-carousel.owl-carousel {
@@ -2683,7 +2683,7 @@ ul.owl-carousel {
 }
 .post-tag a:hover {
   color: #fff;
-  background: #87ba45;
+  background: #235434;
 }
 
 .post-share a {
@@ -2780,7 +2780,7 @@ ul.owl-carousel {
 .comment .reply {
   position: absolute;
   color: #fff;
-  background-color: #87ba45;
+  background-color: #235434;
   right: 0;
   top: 0;
   line-height: 1;
@@ -2852,8 +2852,8 @@ ul.owl-carousel {
 .page-item.active .page-link,
 .page-item.active .page-link:focus,
 .page-item.active .page-link:hover {
-  border-color: #87ba45;
-  background-color: #87ba45;
+  border-color: #235434;
+  background-color: #235434;
   color: #fff;
 }
 
@@ -2953,7 +2953,7 @@ ul.owl-carousel {
 }
 .breadcrumb .breadcrumb-item:hover,
 .breadcrumb > .active {
-  color: #87ba45;
+  color: #235434;
 }
 .breadcrumb .breadcrumb-item + .breadcrumb-item:before {
   padding: 0 10px;
@@ -2993,11 +2993,11 @@ ul.owl-carousel {
 }
 .sidebar-list .list-group-item.active, .sidebar-list .list-group-item:focus, .sidebar-list .list-group-item:hover {
   background: transparent;
-  color: #87ba45;
+  color: #235434;
   border-color: #ccc;
 }
 .sidebar-list .list-group-item.active:after, .sidebar-list .list-group-item:focus:after, .sidebar-list .list-group-item:hover:after {
-  color: #87ba45;
+  color: #235434;
 }
 .sidebar-list .list-group-item.active {
   font-weight: bold;
@@ -3066,7 +3066,7 @@ ul.owl-carousel {
 }
 .archive-widget li a:hover,
 .category-widget li a:hover {
-  color: #87ba45;
+  color: #235434;
 }
 
 .popular-widget {
@@ -3093,7 +3093,7 @@ ul.owl-carousel {
   padding-bottom: 0;
 }
 .popular-widget li > a:hover p {
-  color: #87ba45;
+  color: #235434;
 }
 .popular-widget img {
   float: left;
@@ -3118,7 +3118,7 @@ ul.owl-carousel {
 .popular-widget .popular-description span {
   font-size: 12px;
   font-weight: bold;
-  color: #87ba45;
+  color: #235434;
 }
 
 .tag-cloud {
@@ -3134,7 +3134,7 @@ ul.owl-carousel {
 .tag-cloud a {
   font-size: 11px;
   padding: 0px 10px;
-  background: #87ba45;
+  background: #235434;
   text-transform: uppercase;
   color: #fff;
   margin-right: 5px;
@@ -3209,7 +3209,7 @@ ul.owl-carousel {
   background-color: #3498db;
 }
 .promo-box.green {
-  background-color: #87ba45;
+  background-color: #235434;
 }
 .promo-box.yellow {
   background-color: #f3cc31;
@@ -3442,7 +3442,7 @@ ul.owl-carousel {
   height: 100%;
   padding: 8px 0;
   width: 0;
-  background: #87ba45;
+  background: #235434;
   color: white;
   border: none;
 }
@@ -3465,7 +3465,7 @@ ul.owl-carousel {
   background-color: #3498db;
 }
 .me-progress-bar .progress-content.green {
-  background-color: #87ba45;
+  background-color: #235434;
 }
 .me-progress-bar .progress-content.yellow {
   background-color: #f3cc31;
@@ -3487,7 +3487,7 @@ ul.owl-carousel {
   height: 50px;
   font-size: 22px;
   line-height: 33px;
-  background-color: #87ba45;
+  background-color: #235434;
   color: #fff;
   text-align: center;
   border: 1px solid #71a436;
@@ -3528,10 +3528,10 @@ ul.owl-carousel {
   color: #fff;
 }
 #footer a:hover {
-  color: #87ba45;
+  color: #235434;
 }
 #footer .text-color {
-  color: #87ba45;
+  color: #235434;
 }
 
 .footer-title {
