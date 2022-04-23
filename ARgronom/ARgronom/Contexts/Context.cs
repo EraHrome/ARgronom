@@ -7,6 +7,7 @@ namespace ARgronom.Contexts
     {
 
         public DbSet<IdentityRole> Roles { get; set;}
+        public DbSet<Marker> Markers { get; set; }
         public DbSet<Plants> Plants { get; set; }
         public DbSet<ViewObject> ViewObjects { get; set; }
         public DbSet<SearchPlantsModel> SearchPlantsModels { get; set; }
