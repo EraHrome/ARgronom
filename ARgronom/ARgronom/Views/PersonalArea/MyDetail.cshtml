@@ -2,6 +2,24 @@
 
 @model MyDetailViewModel
 
+@{ 
+    var timeNow = DateTime.Now;
+
+    var lastWateringTime = Model.UserPlant.LastWateringTime;
+    var wateringEnd = lastWateringTime.AddDays(Model.Plant.WateringFrequency);
+
+    var lastFertilizeTime = Model.UserPlant.RecentFertilizer;
+    var fertilizeEnd = lastFertilizeTime.AddDays(Model.Plant.FertilizerFrequency);
+
+    var waterPercent = timeNow > wateringEnd
+        ? 0
+        : (timeNow - lastWateringTime) / (timeNow - wateringEnd);
+
+    var fertilizePercent = timeNow > fertilizeEnd
+        ? 0
+        : (timeNow - lastFertilizeTime) / (timeNow - fertilizeEnd);
+}
+
 <div id="page-header" class="content-contrast">
     <div class="page-title-container">
         <div class="background-overlay"></div>
@@ -140,11 +158,11 @@
                 </p>
             </div>
             <div class="col-lg-3">
-                <div class="me-circle-bar blue" data-percent="60"></div>
+                <div class="me-circle-bar blue" data-percent="@waterPercent"></div>
                 <p class="text-center">Запас воды</p>
             </div>
             <div class="col-lg-3">
-                <div class="me-circle-bar green" data-percent="70"></div>
+                <div class="me-circle-bar green" data-percent="@fertilizePercent"></div>
                 <p class="text-center">Эффект удобрений</p>
             </div>
         </div>
