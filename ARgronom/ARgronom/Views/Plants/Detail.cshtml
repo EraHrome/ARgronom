@@ -4,7 +4,7 @@
     ViewData["Title"] = Model.Title;
 }
 
-<div id="page-header" class="content-contrast">
+<!-- <div id="page-header" class="content-contrast">
     <div class="page-title-container">
         <div class="background-overlay"></div>
         <div class="container centered-container">
@@ -14,20 +14,20 @@
                 <div class="heading-caption">@Model.Description</div>
             </div>
         </div>
-    </div>
-    <div class="breadcrumb-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="breadcrumb">
-                        <a class="breadcrumb-item" href="#">Главная</a>
-                        <a class="breadcrumb-item" href="#">Растения</a>
-                        <span class="breadcrumb-item active">@Model.Category</span>
-                    </nav>
-                </div>
+    </div> -->
+<div class="breadcrumb-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-item" href="#">Главная</a>
+                    <a class="breadcrumb-item" href="#">Растения</a>
+                    <span class="breadcrumb-item active">@Model.Category</span>
+                </nav>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="section">
@@ -35,7 +35,7 @@
         <div class="row">
             <div class="row">
                 <div class="col-md-4">
-                    <h3>@Model.Title</h3>
+                    <h3 style="font-weight: 700;">@Model.Title</h3>
                     <img class="img-radius img-shadow" src="~/products/@(Model.ImageName)"
                          alt="@Model.Title">
                 </div>
@@ -44,7 +44,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-agriculture"></i>
                         </div>
-                        <h5>Где растет</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Где растет:</h5>
                         <p>@Model.PlaceName</p>
                     </div>
 
@@ -52,7 +52,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-natural-resources"></i>
                         </div>
-                        <h5>Тип почвы</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Тип почвы:</h5>
                         <p>@Model.SoilType</p>
                     </div>
 
@@ -60,7 +60,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-planting"></i>
                         </div>
-                        <h5>Удобрение</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Удобрение:</h5>
                         <p>@Model.Fertilizer</p>
                     </div>
 
@@ -68,7 +68,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-spring-day"></i>
                         </div>
-                        <h5>Как часто удобрять</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Как часто удобрять:</h5>
                         <p>@Model.FertilizerFrequency</p>
                     </div>
 
@@ -76,7 +76,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-research_01"></i>
                         </div>
-                        <h5>Минимальное расстояние до следующего саженца</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Между саженцами:</h5>
                         <p>@Model.MinToNextPlant</p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-growing-plant"></i>
                         </div>
-                        <h5>Минимальное расстояние до следующей грядки</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Между грядками:</h5>
                         <p>@Model.MinToNextGardenBed</p>
                     </div>
 
@@ -93,7 +93,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-autumn-tree"></i>
                         </div>
-                        <h5>Нужно ли подвязывать</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Нужно ли подвязывать:</h5>
                         <p>@Model.NeedToTie</p>
                     </div>
 
@@ -101,7 +101,7 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-watering-can"></i>
                         </div>
-                        <h5>Частота полива в днях</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Частота полива:</h5>
                         <p>@Model.WateringFrequency</p>
                     </div>
 
@@ -109,11 +109,15 @@
                         <div class="icon-shape-disable">
                             <i class="craftico-spring-day_01"></i>
                         </div>
-                        <h5>За сколько дней в среднем вырастает</h5>
+                        <h5 style="margin-bottom: 0px !important; font-weight: 600;">Вырастает за:</h5>
                         <p>@Model.StandardGrowthTime</p>
                     </div>
                 </div>
             </div>
+
+            <hr class="separator">
+
+            <div style="margin-bottom: 30px !important" class="heading-caption">@Model.Description</div>
 
             <hr class="separator">
 
