@@ -23,7 +23,7 @@ namespace ARgronom.Services
 
         public async Task<WeatherApiResponse> GetWeather(decimal lat, decimal lon)
         {
-            string requestUrl = $"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=metric&appid={_apiKey}";
+            string requestUrl = $"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=metric&lang=ru&appid={_apiKey}";
             var response = await _client.GetStringAsync(requestUrl);
             return JsonConvert.DeserializeObject<WeatherApiResponse>(response);
         }
