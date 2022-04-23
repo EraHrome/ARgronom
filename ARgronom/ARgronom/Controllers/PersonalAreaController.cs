@@ -4,15 +4,19 @@ using System.Security.Claims;
 using System.Linq;
 using ARgronom.Models.ViewModels;
 using System;
+using ARgronom.Services;
 
 namespace ARgronom.Controllers
 {
     public class PersonalAreaController : Controller
     {
         private readonly Context _context;
-        public PersonalAreaController(Context context)
+        private readonly WeatherService _weather;
+
+        public PersonalAreaController(Context context, WeatherService weather)
         {
             _context = context;
+            _weather = weather;
         }
 
         public IActionResult Index()

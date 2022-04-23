@@ -68,10 +68,11 @@
                         <h5>Запустить режим дополненной реальности</h5>
                     </div>
                     <p>
-                        С помощью режима дополненной реальности вы сможете обозначить геолокационные метки для 
+                        С помощью режима дополненной реальности вы сможете обозначить геолокационные метки для
                         слежения за различными параметрами своих грядок.
                     </p>
                     <a class="btn btn-default btn-outline white" href="/Ar/Index">Запустить</a>
+                    <a class="btn btn-default btn-outline white" id="add-coords">Добавить координаты</a>
                 </div>
             </div>
 
@@ -170,3 +171,13 @@
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    window.onload = () =>  {
+        document.querySelector("#add-coords").addEventListener("click", () => {
+            navigator.geolocation.getCurrentPosition((position) => {
+                window.location.replace(`/Ar/AddCoord/?latit=${position.coords.latitude}&longit=${position.coords.longitude}&plantId=@Model.UserPlant.PlantId`);
+            });
+        });
+    }
+</script>
