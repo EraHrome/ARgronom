@@ -49,7 +49,7 @@
 		    marker.setAttribute('value', 'Tomatos');
 		    marker.setAttribute('scale', '3 3 3');
 		    marker.setAttribute('look-at', '[gps-camera]');
-		    marker.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`);
+		    marker.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
             return marker;
         }
 
@@ -63,7 +63,6 @@
         }
 
         document.querySelector('html').addEventListener('click', (ev) => {
-            console.log('test!');
 
 			navigator.geolocation.getCurrentPosition((position) => {
                 createAndAppendMarker(position.coords.latitude, position.coords.longitude);
