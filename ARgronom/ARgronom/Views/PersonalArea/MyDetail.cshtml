@@ -13,11 +13,11 @@
 
     var waterPercent = timeNow > wateringEnd
         ? 0
-        : (timeNow - lastWateringTime) / (timeNow - wateringEnd);
+        : (wateringEnd - timeNow) * 100 / (wateringEnd - lastWateringTime);
 
     var fertilizePercent = timeNow > fertilizeEnd
         ? 0
-        : (timeNow - lastFertilizeTime) / (timeNow - fertilizeEnd);
+        : (fertilizeEnd - timeNow) * 100 / (fertilizeEnd - lastFertilizeTime);
 }
 
 <div id="page-header" class="content-contrast">
@@ -158,12 +158,14 @@
                 </p>
             </div>
             <div class="col-lg-3">
-                <div class="me-circle-bar blue" data-percent="@waterPercent"></div>
+                <div class="me-circle-bar blue" data-percent="@((int)waterPercent)"></div>
                 <p class="text-center">Запас воды</p>
+                <a class="btn btn-default btn-outline text-center" href="/PersonalArea/UpdateEventTime/?plantId=@Model.UserPlant.PlantId&eventName=watering">Полил</a>
             </div>
             <div class="col-lg-3">
-                <div class="me-circle-bar green" data-percent="@fertilizePercent"></div>
+                <div class="me-circle-bar green" data-percent="@((int)fertilizePercent)"></div>
                 <p class="text-center">Эффект удобрений</p>
+                <a class="btn btn-default btn-outline text-center" href="/PersonalArea/UpdateEventTime/?plantId=@Model.UserPlant.PlantId&eventName=fertilizing">Удобрил</a>
             </div>
         </div>
     </div>

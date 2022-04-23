@@ -3,6 +3,7 @@ using ARgronom.Contexts;
 using System.Security.Claims;
 using System.Linq;
 using ARgronom.Models.ViewModels;
+using System;
 
 namespace ARgronom.Controllers
 {
@@ -50,6 +51,24 @@ namespace ARgronom.Controllers
             return View(model);
         }
 
+        public IActionResult UpdateEventTime(string plantId, string eventName)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userPlant = _context.UserPlants.FirstOrDefault(x => x.PlantId == plantId && x.UserId == userId);
+            switch (eventName)
+            {
+                case "watering":
+                    userPlant.LastWateringTime = DateTime.Now;
+                    break;
+                case "fertilizing":
+                    userPlant.RecentFertilizer = DateTime.Now;
+                    break;
+            }
+            _context.Update(userPlant);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(MyDetail), new { PlantId = plantId });
+        }
 
         //public IActionResult AddComment(string plantId, string subject, string message)
         //{
