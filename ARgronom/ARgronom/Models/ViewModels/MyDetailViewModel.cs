@@ -7,5 +7,6 @@ namespace ARgronom.Models.ViewModels
         public UserPlant UserPlant { get; set; }
         public Plants Plant { get; internal set; }
         public WeatherApiResponse Weather { get; set; }
+        public Marker Marker { get; set; }
     }
 }

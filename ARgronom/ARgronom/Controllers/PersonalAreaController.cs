@@ -61,8 +61,10 @@ namespace ARgronom.Controllers
             {
                 UserPlant = userPlant,
                 Plant = plant, 
-                Weather = weather
+                Weather = weather,
+                Marker = marker
             };
+
             return View(model);
         }
 

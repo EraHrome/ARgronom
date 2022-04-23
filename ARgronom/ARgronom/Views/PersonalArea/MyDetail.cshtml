@@ -61,6 +61,28 @@
                 <p>
                     @Model.Plant.Description
                 </p>
+
+                <form class="contact-form" method="post" action="/Ar/AddCoord/">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="hidden" name="plantId" value="@Model.UserPlant.PlantId" />
+                            <div class="form-group">
+                                <input type="text" name="latit" id="lat"
+                                       class="form-control" placeholder="Широта"
+                                       value="@Model.Marker?.Latitude">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="longit" id="lon"
+                                       class="form-control" placeholder="Долгота"
+                                       value="@Model.Marker?.Longitude">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default btn-block">Задать координаты вручную</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="promo-box green content-contrast no-margin">
@@ -71,7 +93,7 @@
                         С помощью режима дополненной реальности вы сможете обозначить геолокационные метки для
                         слежения за различными параметрами своих грядок.
                     </p>
-                    <a class="btn btn-default btn-outline white" href="/Ar/Index">Запустить</a>
+                    <a class="btn btn-default btn-outline white" href="/Ar/Index">Запустить</a> <br><br>
                     <a class="btn btn-default btn-outline white" id="add-coords">Добавить координаты</a>
                 </div>
             </div>
