@@ -57,7 +57,7 @@
 
                 <form class="contact-form" method="post" action="/Ar/AddCoord/">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <input type="hidden" name="plantId" value="@Model.UserPlant.PlantId" />
                             <div class="form-group">
                                 <input type="text" name="latit" id="lat"
@@ -71,8 +71,15 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-default btn-block">Задать координаты вручную</button>
+                                <button type="button" id="add-coords" class="btn btn-default btn-block">Определить координаты автоматически</button>
                             </div>
                         </div>
+                        @if(Model.Marker!= null && Model.Marker.Latitude!= default && Model.Marker.Longitude!= default)
+                        {
+                          <div class="col-sm-6">
+                              <iframe src="https://maps.google.com/maps?q=@Model.Marker.Latitude, @Model.Marker.Longitude&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
+                          </div>   
+                        }
                     </div>
                 </form>
 
@@ -86,8 +93,7 @@
                         С помощью режима дополненной реальности вы сможете обозначить геолокационные метки для
                         слежения за различными параметрами своих грядок.
                     </p>
-                    <a class="btn btn-default btn-outline white" href="/Ar/Index/?plantId=@Model.Plant.Id">Включить режим просмотра</a> <br><br>
-                    <a class="btn btn-default btn-outline white" id="add-coords">Установить текущие координаты</a>
+                    <a class="btn btn-default btn-outline white" href="/Ar/Index/?plantId=@Model.Plant.Id">Включить режим просмотра</a> <br>
                 </div>
             </div>
 
