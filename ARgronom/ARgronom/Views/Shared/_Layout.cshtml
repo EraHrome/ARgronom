@@ -115,41 +115,26 @@
                                 <li>
                                     <a href="#">Страницы сайта</a>
                                     <ul>
-                                        <li><a href="about-us.html">О нас</a></li>
-                                        <li><a href="team.html">Команда</a></li>
-                                        <li><a href="testimonial.html">Testimonials</a></li>
-                                        <li><a href="pricing-plan.html">Покупка семян</a></li>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                        <li><a href="sitemap.html">Карта сайта</a></li>
-                                        <li><a href="gallery-single.html">Галерея</a></li>
+                                        <li><a href="#">О нас</a></li>
+                                        <li><a href="#">Команда</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                        <li><a href="#">Покупка семян</a></li>
+                                        <li><a href="#">Вопросы</a></li>
+                                        <li><a href="#">Карта сайта</a></li>
+                                        <li><a href="#">Галерея</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">Галерея</a>
-                                    <ul>
-                                        <li><a href="gallery-2column.html">Gallery 2 Column</a></li>
-                                        <li><a href="gallery-3column.html">Gallery 3 Column</a></li>
-                                        <li><a href="gallery-4column.html">Gallery 4 Column</a></li>
-                                        <li>
-                                            <a href="#">Dropdown Level 1</a>
-                                            <ul>
-                                                <li><a href="#">Dropdown Level 2</a></li>
-                                                <li><a href="#">Dropdown Level 2</a></li>
-                                                <li>
-                                                    <a href="#">Dropdown Level 2</a>
-                                                    <ul>
-                                                        <li><a href="#">Dropdown Level 3</a></li>
-                                                        <li><a href="#">Dropdown Level 3</a></li>
-                                                        <li><a href="#">Dropdown Level 3</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
                                 </li>
                                 @if (roleType != Role.None)
                                 {
-                                    <li><a href="/PersonalArea/Index">Личный кабинет</a></li>
+                                    <li>
+                                        <a href="/PersonalArea/Index">Личный кабинет</a>
+                                        <ul>
+                                            <li><a href="/Home/Achievements">Достижения</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" >Выйти</a></li>
                                 }
                                 else

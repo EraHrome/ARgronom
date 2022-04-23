@@ -36,6 +36,11 @@ namespace ARgronom.Controllers
             return View(model);
         }
 
+        public IActionResult Achievements()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
