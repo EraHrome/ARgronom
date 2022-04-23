@@ -25,5 +25,17 @@ namespace ARgronom.Controllers
             return View(model);
         }
 
+        public IActionResult AddPlant(string plantId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            _context.UserPlants.Add(new Models.UserPlant()
+            {
+                PlantId = plantId,
+                UserId = userId,
+            });
+            _context.SaveChanges();
+            return RedirectToAction("Index", "PersonalArea");
+        }
+
     }
 }
