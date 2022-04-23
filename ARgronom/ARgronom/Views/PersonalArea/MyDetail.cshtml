@@ -189,7 +189,25 @@
                     Если индикаторы достигают минимальной процентной отметки, то растение может
                     погибнуть.
                 </p>
+
+                @if ((int)waterPercent < 25)
+                {
+                    <div class="alert alert-warning">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <i class="fa fa-times-circle"></i> <strong>Осторожно!</strong> Посадку стоит полить
+                    </div>
+                }
+
+                @if ((int)fertilizePercent < 25)
+                {
+                    <div class="alert alert-warning">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <i class="fa fa-times-circle"></i> <strong>Осторожно!</strong> Посадку стоит удобрить
+                    </div>
+                }
+
             </div>
+
             <div class="col-lg-3">
                 <div class="me-circle-bar blue" data-percent="@((int)waterPercent)"></div>
                 <p class="text-center">Запас воды</p>
