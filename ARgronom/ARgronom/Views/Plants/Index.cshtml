@@ -15,18 +15,20 @@
     <div class="row">
         @foreach (var plant in Model)
         {
-            <div class="col-md-6 col-lg-4">
-                <div class="team-item">
-                    <img src="~/products/@plant.ImageName" alt="@plant.Title">
-                    <div class="team-item-container">
-                        <h5 class="no-margin">@plant.Title</h5>
-                        <strong class="text-color">@plant.Category</strong>
-                        <p class="crop">
-                            @plant.Description
-                        </p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="team-item">
+                    <a href="/Plants/Detail/?id=@plant.Id">
+                        <img src="~/products/@plant.ImageName" alt="@plant.Title">
+                        <div class="team-item-container">
+                            <h5 class="no-margin">@plant.Title</h5>
+                            <strong class="text-color">@plant.Category</strong>
+                            <p class="crop">
+                                @plant.Description
+                            </p>
+                        </div>
+                    </a>
                     </div>
                 </div>
-            </div>
         }
     </div>
 </div>
