@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ARgronom.Contexts;
+using System.Security.Claims;
+using System.Linq;
+using ARgronom.Models.ViewModels;
 
 namespace ARgronom.Controllers
 {
@@ -13,7 +16,13 @@ namespace ARgronom.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var searchPlantsIds = _context.UserPlants
+                .Where(x => x.UserId == userId)
+                .Select(x => x.PlantId).ToList();
+            var plants = _context.Plants.Where(x => searchPlantsIds.Contains(x.Id.ToString())).ToList();
+            var model = new PersonalAreaIndexModel() { UserPlants = plants };
+            return View(model);
         }
 
     }
