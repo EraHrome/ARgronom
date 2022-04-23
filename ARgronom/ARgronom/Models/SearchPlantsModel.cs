@@ -1,7 +1,12 @@
-﻿namespace ARgronom.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ARgronom.Models
 {
     public class SearchPlantsModel
     {
+
+        [Key]
+        public int Id { get; set; }
 
         /// <summary>
         /// Поисковый запрос
