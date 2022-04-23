@@ -50,5 +50,11 @@ namespace ARgronom.Controllers
             return View(model);
         }
 
+
+        //public IActionResult AddComment(string plantId, string subject, string message)
+        //{
+
+        //}
+
     }
 }
