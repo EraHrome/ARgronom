@@ -54,7 +54,7 @@ namespace ARgronom
 
             services.AddScoped<StatisticService>();
             services.AddScoped<SearchService>();
-
+            services.AddScoped<WeatherService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
