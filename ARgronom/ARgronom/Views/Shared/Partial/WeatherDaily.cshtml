@@ -1,0 +1,31 @@
+﻿
+@model ARgronom.Models.Weather.WeatherApiResponse
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <i class="fa fa-info-circle"></i> <strong>Погодные условия на ближайшие 7 дней</strong>
+            Узнайте, стоит ли поливать грядки
+        </div>
+
+        <ul class="grid-md-7 grid-sm-2 no-wrap">
+            @foreach (var item in Model.daily)
+            {
+                var imgUrl = $"http://openweathermap.org/img/wn/{item.weather.First().icon}@2x.png";
+
+                <li>
+                    <div class="content-box small">
+                        <div class="icon-shape-circle">
+                            <img src="@imgUrl" alt="@item.weather.First().description">
+                        </div>
+                        <h5>@item.weather.First().description</h5>
+                        <p>@($"Температура за день: {item.temp.min} - {item.temp.max}")</p>
+                        <p>@($"Скорость ветра: {item.wind_speed}")</p>
+                    </div>
+                </li>
+            }
+        </ul>
+
+    </div>
+</div>
