@@ -1,6 +1,6 @@
 ﻿@using ARgronom.Models.ViewModels
 
-@model PersonalAreaIndexModel
+@model List<PersonalAreaIndexModel>
 
 <div class="offset-md-1 col-md-10">
     <div class="heading-title text-center no-border">
@@ -14,22 +14,22 @@
         </li>
     </ul>
     <div class="row">
-        @foreach (var plant in Model.UserPlants)
+        @foreach (var persAreaModel in Model)
         {
-                <div class="col-md-6 col-lg-4">
-                    <div class="team-item">
-                    <a href="/PersonalArea/MyDetail/?plantId=@plant.Id">
-                        <img src="~/products/@plant.ImageName" alt="@plant.Title">
+            <div class="col-md-6 col-lg-4">
+                <div class="team-item">
+                    <a href="/PersonalArea/MyDetail/?userPlantId=@persAreaModel.UserPlant.Id">
+                        <img src="~/products/@persAreaModel.Plant.ImageName" alt="@persAreaModel.Plant.Title">
                         <div class="team-item-container">
-                            <h5 class="no-margin">@plant.Title</h5>
-                            <strong class="text-color">@plant.Category</strong>
+                            <h5 class="no-margin">@persAreaModel.Plant.Title</h5>
+                            <strong class="text-color">@persAreaModel.Plant.Category</strong>
                             <p class="crop">
-                                @plant.Description
+                                @persAreaModel.Plant.Description
                             </p>
                         </div>
                     </a>
-                    </div>
                 </div>
+            </div>
         }
     </div>
 </div>

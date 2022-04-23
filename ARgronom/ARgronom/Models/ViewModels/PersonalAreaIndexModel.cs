@@ -4,6 +4,7 @@ namespace ARgronom.Models.ViewModels
 {
     public class PersonalAreaIndexModel
     {
-        public List<Plants> UserPlants { get; set; }
+        public Plants Plant { get; set; }
+        public UserPlant UserPlant { get; set; }
     }
 }

@@ -7,6 +7,7 @@ using System;
 using ARgronom.Services;
 using ARgronom.Models.Weather;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ARgronom.Controllers
 {
@@ -24,11 +25,22 @@ namespace ARgronom.Controllers
         public IActionResult Index()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var searchPlantsIds = _context.UserPlants
-                .Where(x => x.UserId == userId)
-                .Select(x => x.PlantId).ToList();
-            var plants = _context.Plants.Where(x => searchPlantsIds.Contains(x.Id.ToString())).ToList();
-            var model = new PersonalAreaIndexModel() { UserPlants = plants };
+
+            var plants = _context.Plants.ToList();
+            var userPlants = _context.UserPlants.Where(x => x.UserId == userId);
+
+            var model = new List<PersonalAreaIndexModel>();
+            foreach (var userPlant in userPlants)
+            {
+                var plant = plants.FirstOrDefault(p => p.Id == int.Parse(userPlant.PlantId));
+
+                model.Add(new PersonalAreaIndexModel()
+                {
+                    Plant = plant,
+                    UserPlant = userPlant
+                });
+            }
+
             return View(model);
         }
 
@@ -44,13 +56,13 @@ namespace ARgronom.Controllers
             return RedirectToAction("Index", "PersonalArea");
         }
 
-        public async Task<IActionResult> MyDetail(string plantId)
+        public async Task<IActionResult> MyDetail(string userPlantId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userPlant = _context.UserPlants.FirstOrDefault(x => x.PlantId == plantId && x.UserId == userId);
+            var userPlant = _context.UserPlants.FirstOrDefault(x => x.Id == int.Parse(userPlantId) && x.UserId == userId);
             var plant = _context.Plants.FirstOrDefault(x => x.Id.ToString() == userPlant.PlantId);
 
-            var marker = _context.Markers.FirstOrDefault(x => x.PlantId == plantId && x.UserId == userId);
+            var marker = _context.Markers.FirstOrDefault(x => x.PlantId == userPlantId && x.UserId == userId);
             WeatherApiResponse weather = null;
             if(marker != null)
             {
