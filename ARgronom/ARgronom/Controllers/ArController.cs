@@ -5,6 +5,7 @@ using System.Linq;
 using ARgronom.Models;
 using System.Security.Claims;
 using ARgronom.Models.ViewModels;
+using System.Collections.Generic;
 
 namespace ARgronom.Controllers
 {
@@ -19,15 +20,24 @@ namespace ARgronom.Controllers
             _context = context;
         }
 
-        public IActionResult Index(string plantId)
+        public IActionResult Index()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userMarkers = _context.Markers.Where(x => x.UserId == userId).ToList();
-            var model = new ArViewModel()
+
+            var model = new List<ArViewModel>();
+            foreach (var userMarker in userMarkers)
             {
-                Markers = userMarkers,
-                PlantId = plantId
-            };
+               var plant = _context.Plants.FirstOrDefault(p => 
+                   p.Id == int.Parse(userMarker.PlantId));
+
+                model.Add(new ArViewModel
+                {
+                    UserMarker = userMarker,
+                    Plant = plant
+                });
+            }
+
             return View(model);
         }
 
