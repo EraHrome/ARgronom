@@ -10,7 +10,7 @@
         </div>
 
         <ul class="grid-md-7 grid-sm-2 no-wrap">
-            @foreach (var item in Model.daily)
+            @foreach (var item in Model.daily.Skip(1).Take(7))
             {
                 var imgUrl = $"http://openweathermap.org/img/wn/{item.weather.First().icon}@2x.png";
 
