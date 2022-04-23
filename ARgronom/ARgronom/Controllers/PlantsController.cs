@@ -19,6 +19,10 @@ namespace ARgronom.Controllers
         public IActionResult Index(string category)
         {
             var plants = _context.Plants.AsEnumerable();
+            if (!String.IsNullOrEmpty(category))
+            {
+                plants = plants.Where(x => x.Category == category);
+            }
             return View(plants);
         }
 

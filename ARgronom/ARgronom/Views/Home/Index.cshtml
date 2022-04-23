@@ -195,12 +195,12 @@
             <div class="col-md-12">
                 <ul class="gallery-filter text-center">
                     <li>
-                        <a href="#" class="btn btn-default btn-outline btn-round active" data-filter="*">Все категории</a>
+                        <a href="/Plants/Index" class="btn btn-default btn-outline btn-round active" data-filter="*">Все категории</a>
                     </li>
                     @foreach(var item in Model.AllCategoriesAndImages)
                     {
                       <li>
-                          <a href="/Plants/Index?category=@item.Key" class="btn btn-default btn-outline btn-round"data-filter=".maintenance">
+                          <a href="/Plants/Index?category=@item.Key" class="btn btn-default btn-outline btn-round"data-filter=".decoration">
                               @item.Key
                           </a>
                       </li>
@@ -211,18 +211,14 @@
                     @foreach(var item in Model.AllCategoriesAndImages)
                     {
                       <li class="decoration protection">
-                        <figure class="img-gallery">
-                            <div class="img-content">
-                                <img src="~/products/@item.Value" alt="@item.Value">
-                                <div class="img-overlay"></div>
-
-                                <a href="/Plants/Index?category=@item.Key" class="venobox preview" data-gall="myGallery"
-                                   title="Example of description caption">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                                <a href="/Plants/Index?category=@item.Key" class="permalink"><i class="fa fa-link"></i></a>
-                            </div>
-                        </figure>
+                          <a href="/Plants/Index?category=@item.Key">
+                            <figure class="img-gallery">
+                                <div class="img-content">
+                                    <img src="~/products/@item.Value" alt="@item.Value">
+                                    <div class="img-overlay"></div>
+                                </div>
+                            </figure>
+                        </a>
                     </li>
                     }
                 </ul>
