@@ -1,3 +1,35 @@
 ﻿@using ARgronom.Models.ViewModels
 
 @model PersonalAreaIndexModel
+
+<div class="offset-md-1 col-md-10">
+    <div class="heading-title text-center no-border">
+        <h3><strong class="text-color">Ваши растения</strong></h3>
+    </div>
+</div>
+<div class="col-md-12">
+    <ul class="text-center">
+        <li>
+            <a class="btn btn-sm btn-default" href="/Plants/Index">Посадить еще</a>
+        </li>
+    </ul>
+    <div class="row">
+        @foreach (var plant in Model.UserPlants)
+        {
+                <div class="col-md-6 col-lg-4">
+                    <div class="team-item">
+                    <a href="/PersonalArea/MyDetail/?plantId=@plant.Id">
+                        <img src="~/products/@plant.ImageName" alt="@plant.Title">
+                        <div class="team-item-container">
+                            <h5 class="no-margin">@plant.Title</h5>
+                            <strong class="text-color">@plant.Category</strong>
+                            <p class="crop">
+                                @plant.Description
+                            </p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+        }
+    </div>
+</div>

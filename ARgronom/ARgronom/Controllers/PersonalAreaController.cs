@@ -37,5 +37,18 @@ namespace ARgronom.Controllers
             return RedirectToAction("Index", "PersonalArea");
         }
 
+        public IActionResult MyDetail(string plantId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userPlant = _context.UserPlants.FirstOrDefault(x => x.PlantId == plantId && x.UserId == userId);
+            var plant = _context.Plants.FirstOrDefault(x => x.Id.ToString() == userPlant.PlantId);
+            var model = new MyDetailViewModel()
+            {
+                UserPlant = userPlant,
+                Plant = plant
+            };
+            return View(model);
+        }
+
     }
 }
