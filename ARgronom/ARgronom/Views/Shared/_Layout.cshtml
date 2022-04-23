@@ -135,8 +135,15 @@
                                         <li><a href="single-post.html">Blog - Single Post</a></li>
                                     </ul>
                                 </li>
-                                <li><a asp-area="Identity" asp-page="/Account/Register">Зарегистрироваться</a></li>
-                                <li><a asp-area="Identity" asp-page="/Account/Login">Войти</a></li>
+                                @if (roleType != Role.None)
+                                {
+                                    <li><a href="/PersonalArea/Index">Личный кабинет</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-area="Identity" asp-page="/Account/Register">Зарегистрироваться</a></li>
+                                    <li><a asp-area="Identity" asp-page="/Account/Login">Войти</a></li>
+                                }
                             </ul>
                             <div class="additional-menu">
                                 <a class="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
