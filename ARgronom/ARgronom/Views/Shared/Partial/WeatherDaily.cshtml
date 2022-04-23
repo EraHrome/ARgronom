@@ -9,10 +9,16 @@
             Узнайте, стоит ли поливать грядки
         </div>
 
-       
+        @if (Model.current.temp > 25)
+        {
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <i class="fa fa-times-circle"></i> <strong>Внимание!</strong> Погодные условия не соответствуют условиям содержания посадки!
+            </div>
+        }
 
         <ul class="grid-md-7 grid-sm-2 no-wrap">
-            @foreach (var item in Model.daily.Skip(1).Take(7))
+            @foreach (var item in Model.daily.Take(7))
             {
                 var imgUrl = $"http://openweathermap.org/img/wn/{item.weather.First().icon}@2x.png";
 
