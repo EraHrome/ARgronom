@@ -117,7 +117,8 @@ namespace ARgronom.Controllers
                     model.Add(new CalendarViewModel()
                     {
                         Title = $"Полить {plant.Category} {plant.Title}",
-                        DateStart = wateringDate.ToString("s")
+                        DateStart = wateringDate.ToString("s"),
+                        UserPlantId = userPlant.Id.ToString()
                     });
                 }
                 if(fertilizingDate >= DateTime.Now)
@@ -125,7 +126,8 @@ namespace ARgronom.Controllers
                     model.Add(new CalendarViewModel()
                     {
                         Title = $"Удобрить {plant.Category} {plant.Title}",
-                        DateStart = fertilizingDate.ToString("s")
+                        DateStart = fertilizingDate.ToString("s"),
+                        UserPlantId = userPlant.Id.ToString()
                     });
                 }
             }

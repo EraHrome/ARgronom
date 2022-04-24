@@ -33,6 +33,12 @@
                         <text>
                     {
                         title: '@Html.Raw(calendarEvent.Title)',
+                        @if (!string.IsNullOrEmpty(calendarEvent.UserPlantId))
+                        {
+                            <text>
+                        url: '/PersonalArea/MyDetail/?userPlantId=@calendarEvent.UserPlantId',
+                            </text>
+                        }
                         start: '@calendarEvent.DateStart'
                     },
                         </text>

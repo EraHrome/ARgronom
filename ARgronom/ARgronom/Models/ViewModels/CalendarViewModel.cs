@@ -9,5 +9,6 @@ namespace ARgronom.Models.ViewModels
     {
         public string Title { get; set; }
         public string DateStart { get; set; }
+        public string UserPlantId { get; set; }
     }
 }
