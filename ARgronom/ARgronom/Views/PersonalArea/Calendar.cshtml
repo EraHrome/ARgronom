@@ -1,4 +1,6 @@
 ﻿
+@model List<ARgronom.Models.ViewModels.CalendarViewModel>
+
 <head>
     <meta charset='utf-8' />
     <link href='~/lib/main.css' rel='stylesheet' />
@@ -15,7 +17,7 @@
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                 },
-                initialDate: '2020-09-12',
+                initialDate: '@DateTime.Now.ToString("yyyy-MM-dd")',
                 navLinks: true, // can click day/week names to navigate views
                 nowIndicator: true,
 
@@ -26,6 +28,15 @@
                 selectable: true,
                 dayMaxEvents: true, // allow "more" link when too many events
                 events: [
+                    @foreach (var calendarEvent in Model)
+                    {
+                        <text>
+                    {
+                        title: '@Html.Raw(calendarEvent.Title)',
+                        start: '@calendarEvent.DateStart'
+                    },
+                        </text>
+                    }
                     {
                         title: 'Полить Помидор Агата',
                         start: '2020-09-01'

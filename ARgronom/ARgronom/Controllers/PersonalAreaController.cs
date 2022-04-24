@@ -99,9 +99,59 @@ namespace ARgronom.Controllers
             return RedirectToAction(nameof(MyDetail), new { UserPlantId = userPlantId });
         }
 
-        public IActionResult Calendar()
+        public async Task<IActionResult> Calendar()
         {
-            return View();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var plants = _context.Plants.ToList();
+            var userPlants = _context.UserPlants.Where(p => p.UserId == userId);
+
+            var model = new List<CalendarViewModel>();
+            foreach (var userPlant in userPlants)
+            {
+                var plant = plants.FirstOrDefault(p => p.Id == int.Parse(userPlant.PlantId));
+                var wateringDate = userPlant.LastWateringTime.AddDays(plant.WateringFrequency);
+                var fertilizingDate = userPlant.RecentFertilizer.AddDays(plant.FertilizerFrequency);
+
+                if(wateringDate >= DateTime.Now)
+                {
+                    model.Add(new CalendarViewModel()
+                    {
+                        Title = $"Полить {plant.Category} {plant.Title}",
+                        DateStart = wateringDate.ToString("s")
+                    });
+                }
+                if(fertilizingDate >= DateTime.Now)
+                {
+                    model.Add(new CalendarViewModel()
+                    {
+                        Title = $"Удобрить {plant.Category} {plant.Title}",
+                        DateStart = fertilizingDate.ToString("s")
+                    });
+                }
+            }
+
+            var userMark = _context.Markers.FirstOrDefault(m => m.UserId == userId);
+            if(userMark != null)
+            {
+                var weather = await _weatherService.GetWeather(userMark.Latitude, userMark.Longitude);
+                int daysCounter = 1;
+                model.Add(new CalendarViewModel()
+                {
+                    Title = $"Погода - {weather.current.weather.First().description} ",
+                    DateStart = DateTime.Now.ToString("yyyy-MM-dd")
+                });
+                foreach (var daily in weather.daily.Take(7))
+                {
+                    model.Add(new CalendarViewModel()
+                    {
+                        Title = $"Погода -  {daily.weather.First().description} ",
+                        DateStart = DateTime.Now.AddDays(daysCounter).ToString("yyyy-MM-dd")
+                    });
+                    daysCounter++;
+                }
+            }
+
+            return View(model);
         }
 
         //public IActionResult AddComment(string plantId, string subject, string message)
