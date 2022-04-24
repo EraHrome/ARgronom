@@ -53,6 +53,7 @@ ARgronom - это веб-сервис, который поможет польз�
 * MS SQL server
 * AR.js
 * OpenWeatherMap one-call API
+* Plant Identification API
 
 # <a name="contacts"></a>Контакты
 Полковников Никита - polkovnikovnikita99@yandex.ru
