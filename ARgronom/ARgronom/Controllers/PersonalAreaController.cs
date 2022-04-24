@@ -99,6 +99,11 @@ namespace ARgronom.Controllers
             return RedirectToAction(nameof(MyDetail), new { UserPlantId = userPlantId });
         }
 
+        public IActionResult Calendar()
+        {
+            return View();
+        }
+
         //public IActionResult AddComment(string plantId, string subject, string message)
         //{
 
