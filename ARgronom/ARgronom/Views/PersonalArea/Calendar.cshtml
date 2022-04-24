@@ -3,12 +3,13 @@
     <meta charset='utf-8' />
     <link href='~/lib/main.css' rel='stylesheet' />
     <script src='~/lib/main.js'></script>
+    <script src="~/lib/locales/ru.js"></script>
     <script>
-
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: FullCalendar.globalLocales.find(el => el.code == 'ru'),
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
