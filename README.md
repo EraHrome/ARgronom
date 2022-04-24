@@ -58,7 +58,7 @@ ARgronom - это веб-сервис, который поможет польз�
 Полковников Никита - polkovnikovnikita99@yandex.ru
 
 # <a name="team-members"></a>Участники команды
-* "Полковникв Никита" (FullStack)
-* "Соболь Кирилл" (FullStack)
-* "Вильямов Михаил" (UX/UI)
-* "Морозов Андрей" (3D artist/Contnt manager)
+* "Полковникв Никита" (FullStack) - https://t.me/username/POLKOVNIKOV_DEV
+* "Соболь Кирилл" (FullStack) - https://t.me/username/Ziamrurth
+* "Вильямов Михаил" (UX/UI) - https://t.me/username/Foranox
+* "Морозов Андрей" (3D artist/Contnt manager) - https://t.me/username/Ammonitte
