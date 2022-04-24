@@ -35,12 +35,12 @@
         <div class="row">
             <div class="col-lg-4 col-md-12">
                 <div class="heading-title">
-                    <h3>Get in touch <strong class="text-color">With us</strong></h3>
+                    <h3>Присоединяйтесь!</h3>
                 </div>
                 <p>
-                    If you have any question about ARgronom or how we can help to maintenance your garden, please
-                    contact us directly by selecting from one of the below categories that is the most relevant to
-                    your inquiry and fill our short feedback form.
+                    Научитесь всему, что связано с уходом за огородом за короткие сроки. Все, что вам нужно
+                    для посадки, ухода и дизайна вашего огорода, можно найти у нас. Для любых ваших потребностей
+                    мы сможем найти предложение. Также мы готовы предложить вам любую помощь по уходу за огородом.
                 </p>
             </div>
             <div class="col-lg-8 col-md-12">
@@ -71,42 +71,7 @@
                         </div>
                     </div>
                     <span class="loading"></span>
-                    <div class="success-contact">
-                        <div class="alert alert-success">
-                            <i class="fa fa-check-circle"></i> Your <strong>Email Send</strong> Thank you.
-                        </div>
-                    </div>
                 </form>
-            </div>
-            <div class="col-md-6 col-md-offset-2">
-                <section>
-                    <h4>Use another service to log in.</h4>
-                    <hr />
-                    @{
-                        if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                        {
-                            <div>
-                                <p>
-                                    There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                                    for details on setting up this ASP.NET application to support logging in via external services.
-                                </p>
-                            </div>
-                        }
-                        else
-                        {
-                            <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                                <div>
-                                    <p>
-                                        @foreach (var provider in Model.ExternalLogins)
-                                        {
-                                            <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                        }
-                                    </p>
-                                </div>
-                            </form>
-                        }
-                    }
-                </section>
             </div>
         </div>
         <div class="row">
