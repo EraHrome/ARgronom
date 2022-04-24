@@ -80,10 +80,10 @@ namespace ARgronom.Controllers
             return View(model);
         }
 
-        public IActionResult UpdateEventTime(string plantId, string eventName)
+        public IActionResult UpdateEventTime(string userPlantId, string eventName)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userPlant = _context.UserPlants.FirstOrDefault(x => x.PlantId == plantId && x.UserId == userId);
+            var userPlant = _context.UserPlants.FirstOrDefault(x => x.Id == int.Parse(userPlantId) && x.UserId == userId);
             switch (eventName)
             {
                 case "watering":
@@ -96,7 +96,7 @@ namespace ARgronom.Controllers
             _context.Update(userPlant);
             _context.SaveChanges();
 
-            return RedirectToAction(nameof(MyDetail), new { PlantId = plantId });
+            return RedirectToAction(nameof(MyDetail), new { UserPlantId = userPlantId });
         }
 
         //public IActionResult AddComment(string plantId, string subject, string message)

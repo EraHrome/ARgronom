@@ -142,12 +142,12 @@
             <div class="col-lg-3">
                 <div class="me-circle-bar blue" data-percent="@((int)waterPercent)"></div>
                 <p class="text-center">Запас воды</p>
-                <a class="btn btn-default btn-outline text-center" href="/PersonalArea/UpdateEventTime/?plantId=@Model.UserPlant.PlantId&eventName=watering">Полить</a>
+                <a class="btn btn-default btn-outline text-center" href="/PersonalArea/UpdateEventTime/?userPlantId=@Model.UserPlant.Id&eventName=watering">Полить</a>
             </div>
             <div class="col-lg-3">
                 <div class="me-circle-bar green" data-percent="@((int)fertilizePercent)"></div>
                 <p class="text-center">Эффект удобрений</p>
-                <a class="btn btn-default btn-outline text-center" href="/PersonalArea/UpdateEventTime/?plantId=@Model.UserPlant.PlantId&eventName=fertilizing">Удобрить</a>
+                <a class="btn btn-default btn-outline text-center" href="/PersonalArea/UpdateEventTime/?userPlantId=@Model.UserPlant.Id&eventName=fertilizing">Удобрить</a>
             </div>
         </div>
     </div>
